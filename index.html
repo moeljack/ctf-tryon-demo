@@ -189,21 +189,22 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #1c1a
     <div data-bind="motifLine" style="margin-top:2px;font-size:12px;line-height:1.5;color:#6b645c"></div>
 
     <!-- ===== DIGITAL PRODUCT PASSPORT ===== -->
-    <div id="passport-anchor" class="pp-card" role="region" aria-label="Digital Product Passport">
+    <div id="passport-anchor" class="pp-card" role="region" aria-label="Passport: this design">
       <div class="pp-head">
         <div style="display:flex;align-items:center;gap:10px">
           <svg class="ic-sm" viewBox="0 0 24 24" aria-hidden="true" style="width:22px;height:22px"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg>
-          <h2 style="margin:0;font-size:12px;font-weight:500;letter-spacing:.16em;color:#1c1a18">DIGITAL PRODUCT PASSPORT</h2>
+          <h2 style="margin:0;font-size:12px;font-weight:500;letter-spacing:.16em;color:#1c1a18">PASSPORT: THIS DESIGN</h2>
         </div>
         <span style="font-size:10px;letter-spacing:.14em;color:#4a443e;border:1px solid #b9b3ab;padding:4px 8px">ILLUSTRATIVE DATA</span>
       </div>
-      <div style="padding:10px 16px;font-size:12px;color:#6b645c;border-bottom:1px solid #cfc8c0">Passport no. <span data-bind="passportNo"></span> · Barcode <span data-bind="barcode"></span> · Mould <span data-bind="mould"></span></div>
+      <div style="padding:10px 16px;font-size:12px;color:#6b645c;border-bottom:1px solid #cfc8c0">Design record no. <span data-bind="passportNo"></span> · Barcode <span data-bind="barcode"></span> · Mould <span data-bind="mould"></span></div>
+      <div id="xlink" style="padding:12px 16px;border-bottom:1px solid #cfc8c0;font-size:12px;line-height:1.7;color:#4a443e"><span id="xlinkText"></span> <button type="button" id="xlinkBtn" class="btn-reset" style="font-size:12px;color:#3b362f;text-decoration:underline;min-height:32px;padding:0 2px"></button></div>
 
       <h3 style="margin:0">
         <button type="button" id="tgOrigin" class="pp-toggle" aria-expanded="false" aria-controls="ppOrigin"><span>ORIGIN &amp; MATERIALS</span><svg class="ic-sm chev" viewBox="0 0 24 24" aria-hidden="true" style="flex:0 0 18px;transition:transform 200ms ease"><path d="M6 9l6 6 6-6"></path></svg></button>
       </h3>
       <div id="ppOrigin" class="pp-body" hidden>
-        <p style="margin:10px 0 0;font-size:13px;line-height:1.6;color:#5a544d">Follow this piece from source to doorstep. Every piece in the collection follows the same standards: 999 gold from an accredited refinery, due diligence in line with the OECD guidance for mineral supply chains, independent yearly audits of suppliers, and a batch code (<span data-bind="batch"></span>) that follows each material to the finished piece.</p>
+        <p style="margin:10px 0 0;font-size:13px;line-height:1.6;color:#5a544d">Follow this design from source to doorstep. Every piece in the collection follows the same standards: 999 gold from an accredited refinery, due diligence in line with the OECD guidance for mineral supply chains, independent yearly audits of suppliers, and a batch code (<span data-bind="batch"></span>) that follows each material to the finished piece. The sources below are the usual ones for this design; the passport of each piece confirms its own exact lots.</p>
         <h4 class="pp-sub">TRACEABILITY</h4>
         <div style="border-top:1px solid #d6d1cb">
           <div class="step">
@@ -223,7 +224,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #1c1a
 
           <div class="step">
             <h5 style="margin:0;font-weight:inherit"><button type="button" class="step-btn" aria-expanded="false" aria-controls="sp3"><span style="flex:0 0 26px;height:26px;border:1px solid #8a8379;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#4a443e">4</span><span style="flex:1 1 auto;min-width:0"><span style="display:block;font-size:14px;letter-spacing:.02em">Quality assurance</span><span style="display:block;font-size:12px;color:#6b645c;margin-top:2px">Assayed, weighed and inspected</span></span><svg class="ic-sm chev" viewBox="0 0 24 24" aria-hidden="true" style="flex:0 0 18px;transition:transform 200ms ease"><path d="M6 9l6 6 6-6"></path></svg></button></h5>
-            <div id="sp3" class="step-panel" hidden>Each piece is tested by X-ray fluorescence, weighed and measured against its mould (<span data-bind="mould"></span>), then checked under magnification for finish and setting. The assay for this piece reads <span data-bind="assay"></span> parts per thousand. A serial number links the piece to barcode <span data-bind="barcode"></span> and its certificate.</div>
+            <div id="sp3" class="step-panel" hidden>Each piece is tested by X-ray fluorescence, weighed and measured against its mould (<span data-bind="mould"></span>), then checked under magnification for finish and setting. The assay for this design's batch reads <span data-bind="assay"></span> parts per thousand. Each piece also has its own serial number, which links it to barcode <span data-bind="barcode"></span>, its own certificate and its own test result.</div>
           </div>
 
           <div class="step">
@@ -233,7 +234,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #1c1a
 
         </div>
 
-        <h4 class="pp-sub">MATERIALS</h4>
+        <h4 class="pp-sub">MATERIALS IN THE DESIGN BATCH</h4>
         <div id="matRows" style="border-top:1px solid #d6d1cb"></div>
 
         <h4 class="pp-sub">VERIFY THIS PIECE</h4>
@@ -260,6 +261,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #1c1a
           </div>
           <div id="serialOut" role="status" aria-live="polite" style="margin-top:12px"></div>
           <div style="margin-top:10px;font-size:12px;color:#6b645c">Try a sample serial number:<span id="serialSamples"></span></div>
+          <button type="button" id="bigOpen" class="btn-outline" style="width:100%;height:46px;margin-top:14px;font-size:11px">SHOW A SAMPLE CODE ON A BIG SCREEN</button>
       </div>
     </div>
 
@@ -461,6 +463,11 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #1c1a
     <div style="flex:0 1 340px;min-width:0;width:100%">
       <h2 style="margin:0 0 6px;font-size:14px;font-weight:500;letter-spacing:.04em;color:#3b362f">Scan the certificate card</h2>
       <p style="margin:0 0 22px;font-size:13px;line-height:1.6;color:#5a544d">Hold the QR code or barcode on the certificate card inside the frame. The passport opens as soon as the code is read.</p>
+      <div id="zoomBox" style="margin:0 0 20px" hidden>
+        <label for="zoomRange" style="display:flex;justify-content:space-between;font-size:12px;letter-spacing:.06em;color:#4a443e;margin-bottom:6px"><span>ZOOM</span><span id="zoomVal">1.0×</span></label>
+        <input id="zoomRange" type="range" min="1" max="4" step="0.1" value="1" style="width:100%;accent-color:#6b645c;margin:0">
+      </div>
+      <p style="margin:0 0 18px;font-size:12px;line-height:1.6;color:#5a544d">Scanning from across the room? Keep the whole code in view and hold the phone steady. If your phone can zoom, it zooms in by itself while it searches; move the slider to take over. A QR code reads from farther away than a barcode.</p>
       <button type="button" id="scanManual" class="btn-outline" style="width:100%;height:48px;font-size:11px">ENTER THE NUMBER INSTEAD</button>
       <button type="button" id="scanSample" class="btn-outline" aria-expanded="false" style="width:100%;height:48px;margin-top:12px;font-size:11px">SHOW A SAMPLE LABEL</button>
       <div id="sampleLabel" style="margin-top:16px" hidden></div>
@@ -479,12 +486,19 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #1c1a
 </div>
 
 <!-- ============ SAMPLE LABEL, ENLARGED ============ -->
-<div id="sampleZoom" class="try" role="dialog" aria-modal="true" aria-label="Sample label, enlarged" hidden>
+<div id="sampleZoom" class="try" role="dialog" aria-modal="true" aria-label="Sample code on a big screen" hidden>
   <div class="try-top">
-    <div style="font-size:12px;letter-spacing:.16em;color:#3b362f">SAMPLE LABEL</div>
+    <div style="font-size:12px;letter-spacing:.16em;color:#3b362f">SAMPLE CODE ON A BIG SCREEN</div>
     <button type="button" id="sampleZoomClose" class="btn-outline" style="height:44px;padding:0 16px"><svg class="ic-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>CLOSE</button>
   </div>
-  <div style="padding:24px;display:flex;justify-content:center"><img id="sampleZoomImg" alt="Engraved sample label, enlarged" style="width:min(100%,1100px);height:auto;display:block;border:1px solid #d6d1cb" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+  <div role="group" aria-label="What to show" style="padding:16px 24px 0;display:flex;gap:10px;flex-wrap:wrap">
+    <button type="button" data-bigmode="bar" class="btn-outline" aria-pressed="true" style="height:44px;padding:0 16px;font-size:11px">BARCODE</button>
+    <button type="button" data-bigmode="qr" class="btn-outline" aria-pressed="false" style="height:44px;padding:0 16px;font-size:11px">QR CODE</button>
+    <button type="button" data-bigmode="label" class="btn-outline" aria-pressed="false" style="height:44px;padding:0 16px;font-size:11px">ENGRAVED LABEL</button>
+    <button type="button" id="bigNext" class="btn-outline" style="height:44px;padding:0 16px;font-size:11px">NEXT SAMPLE</button>
+  </div>
+  <div id="bigStage" style="padding:24px;display:flex;flex-direction:column;align-items:center;gap:18px"></div>
+  <p style="margin:0;padding:0 24px 40px;text-align:center;font-size:13px;line-height:1.7;color:#5a544d">Fill the screen with the code, turn the brightness up and avoid reflections. A QR code can be read from farther away than a barcode of the same width. Each sample opens a different piece's passport.</p>
 </div>
 <script>/**
  * @license
@@ -14340,8 +14354,8 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
 
     // passport materials
     var pd = PASSPORT[p.id];
-    var mats = [['Gold purity', '999 (99.9% fine gold)'], ['Gold source', pd.gold]].concat(pd.mats,
-                [['Batch code', p.batch], ['Assay result', pd.assay + ' parts per thousand (XRF)'], ['Certificate no.', p.cert]]);
+    var mats = [['Gold purity', '999 (99.9% fine gold)'], ['Usual gold source', pd.gold]].concat(pd.mats,
+                [['Design batch', p.batch], ['Batch assay', pd.assay + ' parts per thousand (XRF)'], ['Batch certificate', p.cert]]);
     var mb = $('#matRows'); mb.innerHTML = '';
     mats.forEach(function (r, i) {
       var d = document.createElement('div'); d.className = 'pp-row';
@@ -14469,6 +14483,10 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
   $$('.step').forEach(function (el, i) {
     $('.step-btn', el).addEventListener('click', function () { st.step = st.step === i ? -1 : i; renderPassport(); });
   });
+  $('#xlinkBtn').addEventListener('click', function () {
+    if (this.getAttribute('data-go') === 'scan') { st.ppC = true; renderPassport(); setTimeout(function () { scrollTo_('tgScan'); $('#serial-input').focus(); }, 40); }
+    else { st.ppO = true; renderPassport(); setTimeout(function () { scrollTo_('tgOrigin'); $('#verify-code').focus(); }, 40); }
+  });
   $('#readStory').addEventListener('click', function () { st.ppS = true; renderPassport(); setTimeout(function () { scrollTo_('passport-anchor'); }, 40); });
   $('#goBehind').addEventListener('click', function () { scrollTo_('behind-piece'); });
 
@@ -14571,10 +14589,47 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
                cast: base, enamel: base + 4 * day, set: base + 7 * day, qa: base + 9 * day, cert: base + 10 * day, pack: base + 12 * day }
     };
   }
+  // care, warranty and aftercare for this particular piece (the red lattice necklace): what it is made of decides how it is looked after
+  function careHTML(u, row, sec, li) {
+    var lab = function (t) { return '<div style="margin-top:20px;font-size:12px;font-weight:500;letter-spacing:.08em;color:#1c1a18">' + t + '</div>'; };
+    var ul = function (items) { return '<ul style="margin:6px 0 0;padding:0 0 0 18px;font-size:13px;line-height:1.65;color:#4a443e">' + items.join('') + '</ul>'; };
+    var live = function (label, id) { return '<div class="pp-row" style="padding:8px 0;border-bottom:1px solid #ece8e3"><span style="flex:0 0 128px">' + label + '</span><span id="' + id + '"></span></div>'; };
+    var h = sec('CARE, WARRANTY AND AFTERCARE', 'THIS DESIGN AND THIS PIECE');
+    h += '<p style="margin:6px 0 0;font-size:13px;line-height:1.65;color:#5a544d">This piece is a 999 gold lattice around a red enamel cylinder, set with ' + u.dCount + ' diamonds and 2 freshwater pearls on a gold chain. Each material is looked after differently.</p>';
+    h += lab('WARRANTY');
+    h += live('Status', 'warrStatus');
+    h += row('Cover', '2 years from the purchase date, for faults in materials and workmanship') +
+      row('Covered', 'Faults in the lattice joints and soldering; enamel that lifts or cracks without a knock; a diamond that comes loose from a faulty setting; failure of the clasp, a chain link or a pearl mount in normal wear') +
+      row('Not covered', 'Dents or chips from knocks; loss or theft; damage from chlorine, perfume or hairspray; wear to the surface of the pearls; changes to the chain length; repairs made outside Chow Tai Fook') +
+      row('Proof', 'Serial number ' + u.serial + ' and certificate ' + u.cert + '. No paper receipt is needed once the piece is registered') +
+      row('New owner', 'The warranty passes on once, when the new owner registers the serial number with a signed transfer note') +
+      row('To claim', 'Take the piece to any Chow Tai Fook shop and quote the serial number');
+    h += lab('LOOKING AFTER EACH MATERIAL');
+    h += ul([
+      li('Gold lattice.', '999 gold is soft. Hold the necklace by the cylinder, not the openwork, and never squeeze or flatten the cage. Polish gently with the supplied cloth.'),
+      li('Red enamel.', 'The cadmium-free enamel is hard but brittle. Avoid knocks and sudden changes in temperature. Wipe with a soft damp cloth only, and never use an ultrasonic bath or steam.'),
+      li('Diamonds (' + u.dCount + ').', 'Wash the rims in lukewarm water with a drop of mild soap and a very soft brush, then pat dry. Do not knock the rims against hard surfaces.'),
+      li('Pearls (2).', 'Put on perfume and hairspray first and the necklace last. Wipe the pearls with a soft dry cloth after wearing, and keep them away from vinegar, chlorine and hot water.'),
+      li('Chain.', 'Close the clasp and lay the chain flat before storing, with the 5 cm extension tucked under so it does not knot.'),
+      li('Wearing.', 'Take it off for swimming, showers, exercise and sleep.'),
+      li('Storage.', 'Keep it flat in its box, away from other jewellery that could scratch the gold.')
+    ]);
+    h += lab('SERVICING');
+    h += live('Annual check', 'nextCheck');
+    h += row('Free at any shop', 'Cleaning and polishing, and a check of the settings, the clasp, the lattice joints and the pearl mounts, quoting the serial number') +
+      row('Every 12 to 18 months', 'Clean and polish, about 30 minutes in a shop') +
+      row('Every 2 years', 'Pearl mounts and thread checked, and the pearls replaced if the nacre has worn') +
+      row('Enamel or lattice', 'Repairs are made by the Master Studio, not in the shop, usually in 4 to 6 weeks, with a quote after inspection');
+    h += lab('AUTHORISED SERVICE HISTORY');
+    h += '<p style="margin:6px 0 0;font-size:13px;line-height:1.65;color:#4a443e">No service recorded yet. Every authorised visit is added to this passport and signed off with the shop\'s code. Repairs made outside Chow Tai Fook are not recorded, and can end the warranty.</p>';
+    h += lab('END OF LIFE');
+    h += '<p style="margin:6px 0 0;font-size:13px;line-height:1.65;color:#4a443e">Bring the piece back to any Chow Tai Fook shop for gold take-back. The gold is re-refined into new pieces, and the diamonds and pearls can be reset.</p>';
+    return h;
+  }
   function unitHTML(u) {
     var P = PASSPORT[SERIAL.pid], prod = PRODUCTS.filter(function (p) { return p.id === SERIAL.pid; })[0];
     var row = function (a, b) { return '<div class="pp-row" style="padding:8px 0;border-bottom:1px solid #ece8e3"><span style="flex:0 0 128px">' + esc(a) + '</span><span>' + esc(b) + '</span></div>'; };
-    var sec = function (t) { return '<h4 class="pp-sub" style="margin:28px 0 6px">' + t + '</h4>'; };
+    var sec = function (t, tag) { return '<h4 class="pp-sub" style="margin:28px 0 6px">' + t + (tag ? '<span style="margin-left:12px;font-size:10px;font-weight:400;letter-spacing:.12em;color:#8a8379">' + tag + '</span>' : '') + '</h4>'; };
     var li = function (a, b) { return '<li style="margin-bottom:6px"><strong style="font-weight:500">' + esc(a) + '</strong> ' + esc(b) + '</li>'; };
     var ev = function (ts, text) { return '<li style="display:flex;gap:14px;padding:0 0 12px 16px;font-size:13px;line-height:1.6;color:#4a443e"><span style="flex:0 0 88px;color:#1c1a18">' + fmtDate(ts) + '</span><span>' + esc(text) + '</span></li>'; };
     var qr = ''; try { qr = qrSvg('https://ctf-dpp.example/passport/' + u.serial, 4); } catch (e) { qr = ''; }
@@ -14594,47 +14649,62 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
     h += '<div style="flex:1 1 460px;min-width:0;max-width:640px">';
     h += '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap"><h2 style="margin:0;font-size:22px;font-weight:300;letter-spacing:.01em">' + esc(prod.title) + '</h2>';
     h += '<span style="font-size:10px;letter-spacing:.14em;color:#4a443e;border:1px solid #b9b3ab;padding:4px 8px">ILLUSTRATIVE DATA</span></div>';
-    h += '<p style="margin:6px 0 0;font-size:13px;line-height:1.6;color:#5a544d">CTF • Palace Museum Collection. This passport was generated from the serial number above.</p>';
-    h += sec('IDENTITY');
+    h += '<p style="margin:6px 0 0;font-size:13px;line-height:1.6;color:#5a544d">CTF • Palace Museum Collection. This is the passport of one piece, generated from its serial number. Its sources, story, makers and ethics come from the passport for this design; its lots, dates, warranty, service history and ownership belong to this piece alone.</p>';
+    h += '<button type="button" id="unitToDesign" class="btn-reset" style="margin-top:4px;font-size:12px;color:#3b362f;text-decoration:underline;min-height:36px;padding:0 2px">View the passport for this design</button>';
+    h += sec('IDENTITY', 'THIS PIECE');
     h += row('Barcode', prod.barcode) + row('Mould', prod.mould) + row('Edition', 'Unit ' + u.n + ' of ' + SERIAL.run) + row('Certificate', u.cert) + row('Gold weight', u.weight + ' g, 999 fine') + row('Length', '45 cm with a 5 cm extension');
-    h += sec('PRODUCT STORY');
+    h += sec('PRODUCT STORY', 'THIS DESIGN');
     h += '<p style="margin:10px 0 12px;font-size:20px;font-weight:300;line-height:1.4;color:#1c1a18">' + esc(prod.quote) + '</p>';
     h += prod.paras.map(function (t, i) { return '<p style="margin:0 0 ' + (i < prod.paras.length - 1 ? '10px' : '0') + ';font-size:14px;line-height:1.75;color:#4a443e">' + esc(t) + '</p>'; }).join('');
-    h += sec('MADE BY');
+    h += careHTML(u, row, sec, li);
+    h += sec('MADE BY', 'THIS PIECE');
     P.people.forEach(function (pe) {
       var role = pe.role.replace('{mould}', prod.mould).replace('{hours}', String(u.hours));
       h += '<div style="padding:8px 0;border-bottom:1px solid #ece8e3;font-size:13px;line-height:1.6;color:#4a443e"><span style="color:#1c1a18">' + esc(pe.n) + ' <span style="font-family:\'Noto Serif SC\',\'Songti SC\',\'SimSun\',serif">' + esc(pe.zh) + '</span></span>, ' + esc(pe.title) + '<br>' + esc(role) + '</div>';
     });
     h += row('Inspected by', u.inspector + ', Master Studio quality control');
-    h += sec('MATERIALS AND LOTS');
+    h += sec('MATERIALS AND LOTS', 'THIS PIECE');
     h += row('Gold', 'Lot ' + u.goldLot + ' · ' + P.gold) + row('Diamonds', u.dCount + ' stones, ' + u.dCt + ' ct in total, colour G–H, clarity VS');
     h += row('T•MARK IDs', u.tm.join(', ') + ' and ' + (u.dCount - 3) + ' more') + row('Pearls', '2 freshwater pearls, ' + u.pearlMm + ' mm · lot ' + u.pearlLot + ' · Suzhou, Jiangsu');
     h += row('Red enamel', 'Cadmium-free · lot ' + u.enLot) + row('Chain', 'Lot ' + u.chLot + ', drawn from the same gold as the lattice');
-    h += sec('JOURNEY');
+    h += sec('JOURNEY', 'THIS PIECE');
     h += '<ol style="list-style:none;margin:10px 0 0;padding:0;border-left:1px solid #b9b3ab">';
     h += ev(u.dates.pearl, 'Pearls harvested at the Weitang farm, Suzhou (lot ' + u.pearlLot + ')') + ev(u.dates.diamond, 'Diamonds cut in Shenzhen and inscribed with T•MARK IDs');
     h += ev(u.dates.gold, 'Gold refined to 999 fineness (assay ' + P.assay + ' parts per thousand)') + ev(u.dates.cast, 'Lattice cage formed at the Master Studio');
     h += ev(u.dates.enamel, 'Red enamel fired') + ev(u.dates.set, 'Diamonds and pearls set') + ev(u.dates.qa, 'Assay and quality check by ' + u.inspector);
     h += ev(u.dates.cert, 'Certificate ' + u.cert + ' issued') + ev(u.dates.pack, 'Sealed and packed for delivery');
     h += '</ol>';
-    h += sec('ETHICS AND SUSTAINABILITY');
+    h += sec('ETHICS AND SUSTAINABILITY', 'THIS DESIGN');
     P.sources.forEach(function (s) {
       h += '<div style="margin-top:12px;font-size:12px;font-weight:500;letter-spacing:.08em;color:#1c1a18">' + esc(s.t) + '</div><div style="font-size:12px;color:#6b645c;margin-top:2px">' + esc(s.origin) + '</div>';
       h += '<ul style="margin:6px 0 0;padding:0 0 0 18px;font-size:13px;line-height:1.65;color:#4a443e">' + s.eth.map(function (e) { return li(e[0], e[1]); }).join('') + '</ul>';
     });
     h += '<div class="pp-row" style="padding:12px 0 0"><span style="flex:0 0 128px">Carbon footprint</span><span>About ' + u.co2 + ' kg CO₂e for this piece (estimate)</span></div>';
-    h += sec('AUTHENTICITY CHECKS');
+    h += sec('AUTHENTICITY CHECKS', 'THIS PIECE');
     h += '<ul style="list-style:none;margin:6px 0 0;padding:0;font-size:13px;line-height:1.9;color:#4a443e">' + ['Serial number format is valid', 'Check digit matches', 'Within the production run (1 to ' + SERIAL.run + ')', 'Certificate ' + u.cert + ' issued', 'Not reported lost or stolen'].map(function (t) { return '<li><span aria-hidden="true" style="color:#2f7a4a;margin-right:8px">✓</span>' + esc(t) + '</li>'; }).join('') + '</ul>';
-    h += sec('CARE, REPAIR AND END OF LIFE');
-    h += '<ul style="margin:6px 0 0;padding:0 0 0 18px;font-size:13px;line-height:1.65;color:#4a443e">' +
-      li('Care.', 'Wipe with the supplied cloth and avoid soaking the enamel.') + li('Repair.', 'Cleaning and checks are free at any Chow Tai Fook store, quoting the serial number.') +
-      li('End of life.', 'Bring the piece back to a store for gold take-back, where the gold is re-refined into new pieces.') + '</ul>';
     h += '</div>';
     return h;
   }
   function qrSvg(text, cell) {
     var q = window.qrcode(0, 'M'); q.addData(text); q.make();
     return q.createSvgTag({ cellSize: cell || 4, margin: 2, scalable: true });
+  }
+  /* ----- Code 128, set C: two digits per symbol. Used to draw a sample barcode as large as a screen allows ----- */
+  var C128 = '11011001100,11001101100,11001100110,10010011000,10010001100,10001001100,10011001000,10011000100,10001100100,11001001000,11001000100,11000100100,10110011100,10011011100,10011001110,10111001100,10011101100,10011100110,11001110010,11001011100,11001001110,11011100100,11001110100,11101101110,11101001100,11100101100,11100100110,11101100100,11100110100,11100110010,11011011000,11011000110,11000110110,10100011000,10001011000,10001000110,10110001000,10001101000,10001100010,11010001000,11000101000,11000100010,10110111000,10110001110,10001101110,10111011000,10111000110,10001110110,11101110110,11010001110,11000101110,11011101000,11011100010,11011101110,11101011000,11101000110,11100010110,11101101000,11101100010,11100011010,11101111010,11001000010,11110001010,10100110000,10100001100,10010110000,10010000110,10000101100,10000100110,10110010000,10110000100,10011010000,10011000010,10000110100,10000110010,11000010010,11001010000,11110111010,11000010100,10001111010,10100111100,10010111100,10010011110,10111100100,10011110100,10011110010,11110100100,11110010100,11110010010,11011011110,11011110110,11110110110,10101111000,10100011110,10001011110,10111101000,10111100010,11110101000,11110100010,10111011110,10111101110,11101011110,11110101110,11010000100,11010010000,11010011100,1100011101011'.split(',');
+  function code128C(digits) {
+    if (!/^\d+$/.test(digits) || digits.length % 2) return null;
+    var v = [105], i, sum;
+    for (i = 0; i < digits.length; i += 2) v.push(parseInt(digits.substr(i, 2), 10));
+    sum = v[0]; for (i = 1; i < v.length; i++) sum += v[i] * i;
+    v.push(sum % 103); v.push(106);
+    return v.map(function (x) { return C128[x]; }).join('');
+  }
+  // the number engraved as the barcode: the product's digits, the unit number and the check digit
+  function compactPayload(n, pid) { var u = ('000000' + n).slice(-6); return RUNS[pid || SERIAL.pid].code.replace(/\D/g, '') + u + luhn(u); }
+  function barSvg(bits, quiet) {
+    var q = quiet || 10, total = bits.length + 2 * q, rects = '', i = 0, j;
+    while (i < bits.length) { if (bits.charAt(i) === '1') { j = i; while (j < bits.length && bits.charAt(j) === '1') j++; rects += '<rect x="' + (q + i) + '" y="0" width="' + (j - i) + '" height="100"/>'; i = j; } else i++; }
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + total + ' 100" preserveAspectRatio="none" shape-rendering="crispEdges" role="img" aria-label="Barcode" style="display:block;width:100%;height:100%"><rect width="' + total + '" height="100" fill="#fff"/><g fill="#000">' + rects + '</g></svg>';
   }
   /*SERIAL_END*/
 
@@ -14649,6 +14719,7 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
     p.paras.forEach(function (t, i) {
       var e = document.createElement('p'); e.style.cssText = 'margin:0 0 ' + (i < p.paras.length - 1 ? '10px' : '0') + ';font-size:14px;line-height:1.75;color:#4a443e'; e.textContent = t; tg.appendChild(e);
     });
+    h += '<p style="margin:0 0 14px;font-size:12px;line-height:1.6;color:#6b645c">These are the usual sources for this design. The passport of each piece confirms its exact lots.</p>';
     pd.sources.forEach(function (s, i) {
       h += '<div style="' + (i ? 'margin-top:18px;padding-top:14px;border-top:1px solid #e4e0da' : '') + '">';
       h += '<div style="font-size:12px;font-weight:500;letter-spacing:.08em;color:#1c1a18">' + esc(s.t) + '</div>';
@@ -14665,13 +14736,17 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
       h += '<div style="min-width:0"><div style="font-size:15px;color:#1c1a18;letter-spacing:.02em">' + esc(pe.n) + ' <span style="font-family:\'Noto Serif SC\',\'Songti SC\',\'SimSun\',serif">' + esc(pe.zh) + '</span></div>';
       h += '<div style="margin-top:2px;font-size:12px;color:#6b645c;line-height:1.5">' + esc(pe.title) + '</div><div style="margin-top:8px;font-size:12px;line-height:1.55">' + esc(pe.exp) + '</div></div></div>';
       h += '<div style="margin-top:14px;font-size:12px;font-weight:500;letter-spacing:.08em;color:#1c1a18">CREDENTIALS</div><ul style="margin:8px 0 0;padding:0 0 0 18px">' + pe.creds.map(function (c) { return '<li style="margin-bottom:5px">' + esc(c) + '</li>'; }).join('') + '</ul>';
-      h += '<div style="margin-top:14px;font-size:12px;font-weight:500;letter-spacing:.08em;color:#1c1a18">ROLE ON THIS PIECE</div><p style="margin:6px 0 0">' + esc(role) + '</p></div>';
+      h += '<div style="margin-top:14px;font-size:12px;font-weight:500;letter-spacing:.08em;color:#1c1a18">ROLE ON THIS DESIGN</div><p style="margin:6px 0 0">' + esc(role) + '</p></div>';
     });
     $('#craftBox').innerHTML = h;
     var img = IMAGE_SLOTS.craftsperson[p.id];
     renderSlot($('#slotCraft'), img, SLOT_LABELS.craftsperson[p.id]);
     $('#craftCap').textContent = img ? 'Illustrative portrait' : 'Portrait to come';
     $('#scanBlock').hidden = p.id !== SERIAL.pid;      // unit passports exist for the red lattice necklace only
+    var own = p.id === SERIAL.pid;
+    $('#xlinkText').textContent = own ? 'This page covers the design. Every piece also has its own digital product passport, with its own lots, warranty and service history.' : 'This page covers the design. Every piece also carries its own serial number and record.';
+    $('#xlinkBtn').textContent = own ? 'Open yours with Scan your piece' : 'Check a serial number';
+    $('#xlinkBtn').setAttribute('data-go', own ? 'scan' : 'verify');
     $('#serialOut').innerHTML = '';
   }
 
@@ -14717,11 +14792,20 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
   function wireUnit(u) {
     var btn = $('#regBtn'), out = $('#regOut'), key = 'ctf-dpp-reg-' + u.serial, stored = null;
     try { stored = window.localStorage.getItem(key); } catch (e) { stored = null; }
+    var plusYear = function (str) { var p = String(str).split(' '), m = MONTHS.indexOf(p[1]); return m < 0 ? null : fmtDate(Date.UTC(+p[2] + 1, m, +p[0])); };
     var paint = function () {
+      var ws = $('#warrStatus'), nc = $('#nextCheck');
+      if (ws) ws.textContent = stored ? 'Active. Registered on ' + stored + ' (in this prototype the registration date stands in for the purchase date)' : 'Not active yet. It starts on the purchase date and is confirmed when this piece is registered';
+      if (nc) nc.textContent = stored ? 'Due by ' + plusYear(stored) + ', then once a year' : 'Due a year after the purchase date, then once a year';
       btn.textContent = stored ? 'REGISTERED' : 'REGISTER THIS PIECE'; btn.setAttribute('aria-pressed', String(!!stored));
       out.textContent = stored ? 'Registered to you on ' + stored + '. In this prototype it is saved on this device only.' : 'Not yet registered to an owner. Registering links the piece to you for repairs and resale.';
     };
     paint();
+    var td = $('#unitToDesign');
+    if (td) td.addEventListener('click', function () {
+      closeUnit(); if (cur.id !== SERIAL.pid) setProduct(SERIAL.pid);
+      st.ppO = true; renderPassport(); setTimeout(function () { scrollTo_('tgOrigin'); $('#tgOrigin').focus(); }, 40);
+    });
     btn.addEventListener('click', function () {
       if (stored) { stored = null; try { window.localStorage.removeItem(key); } catch (e) {} }
       else { stored = fmtDate(Date.now()); try { window.localStorage.setItem(key, stored); } catch (e) {} }
@@ -14787,7 +14871,8 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
      Safari) use jsQR for QR codes and ZXing for 1D barcodes, looking at the area inside the frame.
      A code only counts when it holds a valid serial number. Then a box is drawn around the code and the serial
      number printed under it, and the passport opens. Anything else is ignored, with a short explanation. */
-  var scanFound = false, scanAnim = 0, scanGo = 0, zxReaderObj = null, zxCv = null, zxRound = 0;
+  var scanFound = false, scanAnim = 0, scanGo = 0, zxReaderObj = null, zxCv = null, zxRound = 0, farCv = null, scanN = 0;
+  var scanTrack = null, zoomCap = null, scanAuto = true, zoomAt = 0;
   function scanMsg(t) { var m = $('#scanMsg'); m.textContent = t || ''; m.hidden = !t; }
   function clearScanBox() {
     cancelAnimationFrame(scanAnim); clearTimeout(scanGo);
@@ -14796,6 +14881,7 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
   function stopScan() {
     clearTimeout(scanTimer);
     if (scanStream) { scanStream.getTracks().forEach(function (t) { t.stop(); }); scanStream = null; }
+    scanTrack = null; zoomCap = null;
     try { scanVideo.srcObject = null; } catch (e) {}
   }
   function closeScan(focusEl) {
@@ -14819,6 +14905,124 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
     var twoD = ['qr_code', 'data_matrix', 'aztec', 'pdf417'].indexOf(c.format) >= 0;
     return { raw: c.rawValue, quad: q, kind: twoD ? '2d' : '1d' };
   }
+  /*FARSCAN_BEGIN*/
+  /* ----- small, distant barcodes -----
+     Far away, the bars cover only a few camera pixels, and a standard decoder needs about two pixels per bar unit.
+     So: (1) find barcode-like areas anywhere in the picture (strong left-right edges, weak up-down edges),
+         (2) average many rows through the bars, which cancels camera noise,
+         (3) stretch that single line and cut it cleanly between dark and light, then hand it to the decoder.
+     This reads barcodes about half as wide as the plain decoder needs. */
+  function findBars(lum, w, h) {
+    var cs = 8, gw = Math.ceil(w / cs), gh = Math.ceil(h / cs), n = gw * gh, gx = new Float32Array(n), gy = new Float32Array(n), x, y, k;
+    for (y = 1; y < h - 1; y++) {
+      var o = y * w, row = ((y / cs) | 0) * gw;
+      for (x = 1; x < w - 1; x++) {
+        var i = o + x, dx = lum[i + 1] - lum[i - 1], dy = lum[i + w] - lum[i - w], c = row + ((x / cs) | 0);
+        gx[c] += dx < 0 ? -dx : dx; gy[c] += dy < 0 ? -dy : dy;
+      }
+    }
+    var sc = new Float32Array(n), max = 0;
+    for (k = 0; k < n; k++) { var v = gx[k] - 1.2 * gy[k]; sc[k] = v > 0 ? v : 0; if (sc[k] > max) max = sc[k]; }
+    if (max < cs * cs * 8) return [];
+    var thr = Math.max(max * 0.18, cs * cs * 5), on = new Uint8Array(n);
+    for (k = 0; k < n; k++) on[k] = sc[k] > thr ? 1 : 0;
+    var gap, last;                                                                                   // bridge gaps of up to four cells between bars
+    for (y = 0; y < gh; y++) { last = -9; for (x = 0; x < gw; x++) { k = y * gw + x; if (on[k]) { gap = x - last; if (gap > 1 && gap <= 5) for (var f = last + 1; f < x; f++) on[y * gw + f] = 1; last = x; } } }
+    var seen = new Uint8Array(n), out = [], stack = [];
+    for (k = 0; k < n; k++) {
+      if (!on[k] || seen[k]) continue;
+      var x0 = gw, x1 = 0, y0 = gh, y1 = 0, tot = 0; stack.length = 0; stack.push(k); seen[k] = 1;
+      while (stack.length) {
+        var p = stack.pop(), px = p % gw, py = (p / gw) | 0;
+        if (px < x0) x0 = px; if (px > x1) x1 = px; if (py < y0) y0 = py; if (py > y1) y1 = py; tot += sc[p];
+        if (px > 0 && on[p - 1] && !seen[p - 1]) { seen[p - 1] = 1; stack.push(p - 1); }
+        if (px < gw - 1 && on[p + 1] && !seen[p + 1]) { seen[p + 1] = 1; stack.push(p + 1); }
+        if (py > 0 && on[p - gw] && !seen[p - gw]) { seen[p - gw] = 1; stack.push(p - gw); }
+        if (py < gh - 1 && on[p + gw] && !seen[p + gw]) { seen[p + gw] = 1; stack.push(p + gw); }
+      }
+      var cw_ = x1 - x0 + 1, ch_ = y1 - y0 + 1;
+      if (cw_ >= 6 && cw_ >= 1.4 * ch_) out.push({ x0: x0 * cs, y0: y0 * cs, x1: Math.min(w, (x1 + 1) * cs), y1: Math.min(h, (y1 + 1) * cs), score: tot });
+    }
+    out.sort(function (a, b) { return b.score - a.score; });
+    return out.slice(0, 3);
+  }
+  // zx(lum, w, h) is the decoder; it returns a ZXing result or null
+  function decodeBand(lum, w, h, box, zx, opt) {
+    opt = opt || {};
+    var bw = box.x1 - box.x0, bh = box.y1 - box.y0, pad = Math.round(bw * 0.12), alpha = opt.alpha == null ? 1.3 : opt.alpha;
+    var x0 = Math.max(0, box.x0 - pad), x1 = Math.min(w, box.x1 + pad), W = x1 - x0, band = Math.max(4, Math.round(bh * (opt.band || 0.3)));
+    var up1 = Math.max(3, Math.min(8, Math.round(640 / bw))), ups = [up1, Math.max(2, up1 - 2)], offs = [0, -0.2, 0.2], oi, ui, x, y, u;
+    for (oi = 0; oi < offs.length; oi++) {
+      var yc = Math.round(box.y0 + bh * (0.5 + offs[oi])), ya = Math.max(0, yc - (band >> 1)), yb = Math.min(h, ya + band), row = new Float32Array(W);
+      for (x = 0; x < W; x++) { var sum = 0; for (y = ya; y < yb; y++) sum += lum[y * w + x0 + x]; row[x] = sum / (yb - ya); }
+      for (ui = 0; ui < ups.length; ui++) {
+        var up = ups[ui], UW = W * up, sig = new Float32Array(UW);
+        var g = function (k) { return row[k < 0 ? 0 : k > W - 1 ? W - 1 : k]; };
+        for (u = 0; u < UW; u++) {                                                       // smooth (cubic) stretch of the line
+          var fx = (u + 0.5) / up - 0.5, i = Math.floor(fx), t = fx - i, p0 = g(i - 1), p1 = g(i), p2 = g(i + 1), p3 = g(i + 2);
+          sig[u] = 0.5 * ((2 * p1) + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t * t + (-p0 + 3 * p1 - 3 * p2 + p3) * t * t * t);
+        }
+        var rad = Math.max(1, Math.round(up * 0.75)), acc = new Float32Array(UW + 1), sh = new Float32Array(UW);        // unsharp mask: add back the difference from a local average
+        for (u = 0; u < UW; u++) acc[u + 1] = acc[u] + sig[u];
+        for (u = 0; u < UW; u++) { var la = u - rad < 0 ? 0 : u - rad, lb = u + rad + 1 > UW ? UW : u + rad + 1; sh[u] = sig[u] + alpha * (sig[u] - (acc[lb] - acc[la]) / (lb - la)); }
+        sig = sh;
+        var win = Math.max(8, Math.round(bw / 90 * up * 12)), img = new Uint8ClampedArray(UW * 24);
+        for (u = 0; u < UW; u++) {                                                       // cut halfway between the local dark and light levels
+          var lo = 255, hi = 0, a = u - win < 0 ? 0 : u - win, b = u + win > UW ? UW : u + win;
+          for (var kk = a; kk < b; kk += 3) { if (sig[kk] < lo) lo = sig[kk]; if (sig[kk] > hi) hi = sig[kk]; }
+          var bit = (hi - lo < 24) ? 255 : (sig[u] < (lo + hi) / 2 ? 0 : 255);
+          for (var r = 0; r < 24; r++) img[r * UW + u] = bit;
+        }
+        var res = zx(img, UW, 24);
+        if (res) {
+          var rp = res.getResultPoints() || [], pa = rp[0], pb = rp[rp.length - 1];
+          return { res: res, xa: pa ? x0 + pa.getX() / up : box.x0, xb: pb ? x0 + pb.getX() / up : box.x1, y: yc };
+        }
+      }
+    }
+    return null;
+  }
+  // a located area can also take in what sits next to the bars (a seal above, the serial number below). Tighten it to the
+  // bars: the rows with the most left-right edge energy, then the columns that carry that energy
+  function tighten(lum, w, h, box) {
+    var x0 = box.x0, x1 = Math.min(w - 1, box.x1), y0 = box.y0, y1 = Math.min(h - 1, box.y1), x, y, e = [], best = 0, by = y0, s, d;
+    for (y = y0; y <= y1; y++) { s = 0; for (x = x0 + 1; x < x1; x++) { d = lum[y * w + x + 1] - lum[y * w + x - 1]; s += d < 0 ? -d : d; } e.push(s); if (s > best) { best = s; by = y; } }
+    if (best <= 0) return box;
+    var ya = by, yb = by, lim = best * 0.5;
+    while (ya > y0 && e[ya - 1 - y0] > lim) ya--;
+    while (yb < y1 && e[yb + 1 - y0] > lim) yb++;
+    var qy = (yb - ya) >> 2, cy0 = ya + qy, cy1 = yb - qy;
+    if (cy1 <= cy0) { cy0 = ya; cy1 = yb; }
+    var ce = new Float32Array(x1 - x0 + 1), cmax = 0;
+    for (x = x0 + 1; x < x1; x++) { var t = 0; for (y = cy0; y <= cy1; y++) { d = lum[y * w + x + 1] - lum[y * w + x - 1]; t += d < 0 ? -d : d; } ce[x - x0] = t; if (t > cmax) cmax = t; }
+    var n = ce.length, sw = Math.max(5, Math.round(n * 0.04)), acc = new Float32Array(n + 1), sm = new Float32Array(n), smax = 0, i;      // smooth, so wide bars do not leave holes
+    for (i = 0; i < n; i++) acc[i + 1] = acc[i] + ce[i];
+    for (i = 0; i < n; i++) { var la = i - sw < 0 ? 0 : i - sw, lb = i + sw + 1 > n ? n : i + sw + 1; sm[i] = (acc[lb] - acc[la]) / (lb - la); if (sm[i] > smax) smax = sm[i]; }
+    var thr = smax * 0.3, gapMax = Math.max(4, Math.round(n * 0.03)), gap = 0, cur = null, runs = [];             // the strongest stretch of columns is the bars; lone edges nearby are not
+    for (i = 0; i < n; i++) {
+      if (sm[i] >= thr) { if (!cur) cur = { a: i, b: i, sum: 0 }; cur.b = i; cur.sum += ce[i]; gap = 0; }
+      else if (cur && ++gap > gapMax) { runs.push(cur); cur = null; gap = 0; }
+    }
+    if (cur) runs.push(cur);
+    if (!runs.length) return box;
+    runs.sort(function (p, q) { return q.sum - p.sum; });
+    var xa = x0 + runs[0].a, xb = x0 + runs[0].b;
+    if (xb - xa < 24 || yb - ya < 3) return box;
+    return { x0: xa, y0: ya, x1: xb + 1, y1: yb + 1, score: box.score };
+  }
+  // read one located area: a plain decode of the area first (cheap, and enough when the code is big), then the row-average way
+  function readBox(lum, w, h, box0, zx) {
+    var box = tighten(lum, w, h, box0), px = Math.max(0, box.x0 - 24), py = Math.max(0, box.y0 - 24), pw = Math.min(w, box.x1 + 24) - px, ph = Math.min(h, box.y1 + 24) - py, x, y;
+    var crop = new Uint8ClampedArray(pw * ph);
+    for (y = 0; y < ph; y++) for (x = 0; x < pw; x++) crop[y * pw + x] = lum[(py + y) * w + px + x];
+    var res = zx(crop, pw, ph);
+    if (res) {
+      var rp = res.getResultPoints() || [], a = rp[0], b = rp[rp.length - 1];
+      return { res: res, xa: a ? px + a.getX() : box.x0, xb: b ? px + b.getX() : box.x1, y: a ? py + a.getY() : (box.y0 + box.y1) / 2 };
+    }
+    return decodeBand(lum, w, h, box, zx, { alpha: 2.0, band: 0.4 }) || decodeBand(lum, w, h, box, zx, { alpha: 1.3, band: 0.5 });
+  }
+  /*FARSCAN_END*/
   function zxReader() {
     if (zxReaderObj) return zxReaderObj;
     var Z = window.ZXing, hints = new Map();
@@ -14827,42 +15031,65 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
     zxReaderObj = new Z.MultiFormatReader(); zxReaderObj.setHints(hints);
     return zxReaderObj;
   }
-  // fallback for browsers without BarcodeDetector. The viewfinder frame is a square in the middle of the picture, so the
-  // 1D decoder looks at that square first (a little larger, then larger again, then the whole picture)
+  function zxDecodeLum(lum, w, h) {
+    var Z = window.ZXing, src = new Z.RGBLuminanceSource(lum, w, h), r = zxReader();
+    try { return r.decode(new Z.BinaryBitmap(new Z.HybridBinarizer(src))); } catch (e) {}
+    try { return r.decode(new Z.BinaryBitmap(new Z.GlobalHistogramBinarizer(src))); } catch (e) {}
+    return null;
+  }
+  // look over the whole picture (up to 1920 px wide) for small barcodes, wherever they are
+  function detectFar() {
+    var vw = scanVideo.videoWidth, vh = scanVideo.videoHeight, k = Math.min(1, 1920 / Math.max(vw, vh)), W = Math.round(vw * k), H = Math.round(vh * k);
+    if (!farCv) farCv = document.createElement('canvas');
+    farCv.width = W; farCv.height = H;
+    var g = farCv.getContext('2d', { willReadFrequently: true }); g.drawImage(scanVideo, 0, 0, W, H);
+    var d = g.getImageData(0, 0, W, H).data, lum = new Uint8ClampedArray(W * H), i;
+    for (i = 0; i < lum.length; i++) lum[i] = (d[i * 4] * 77 + d[i * 4 + 1] * 150 + d[i * 4 + 2] * 29) >> 8;
+    var boxes = findBars(lum, W, H);
+    for (i = 0; i < boxes.length; i++) {
+      var r = readBox(lum, W, H, boxes[i], zxDecodeLum);
+      if (r) { var q = barcodeRect(lum, W, H, r.xa, r.xb, r.y); return { raw: r.res.getText(), quad: q.map(function (p) { return { x: p.x / k, y: p.y / k }; }), kind: '1d' }; }
+    }
+    return null;
+  }
+  // used by browsers without BarcodeDetector. Order: small barcodes anywhere in the picture, then QR codes (the whole
+  // picture and the middle at full detail), then, now and then, the older look at a square in the middle
   function detectFallback() {
     var vw = scanVideo.videoWidth, vh = scanVideo.videoHeight, ov = $('#scanOverlay');
     var stW = ov.clientWidth || vw, stH = ov.clientHeight || vh, s = Math.max(stW / vw, stH / vh);
+    scanN++;
+    if (window.ZXing) { var far = detectFar(); if (far) return far; }
     if (typeof window.jsQR === 'function') {
-      var k = Math.min(1, 640 / Math.max(vw, vh));
+      var mid = scanN % 2 === 0, rw = mid ? Math.round(vw * 0.55) : vw, rh = mid ? Math.round(vh * 0.55) : vh, rx = Math.round((vw - rw) / 2), ry = Math.round((vh - rh) / 2);
+      var k = Math.min(1, 1280 / Math.max(rw, rh));
       if (!scanCv) scanCv = document.createElement('canvas');
-      scanCv.width = Math.round(vw * k); scanCv.height = Math.round(vh * k);
+      scanCv.width = Math.round(rw * k); scanCv.height = Math.round(rh * k);
       var g = scanCv.getContext('2d', { willReadFrequently: true });
-      g.drawImage(scanVideo, 0, 0, scanCv.width, scanCv.height);
+      g.drawImage(scanVideo, rx, ry, rw, rh, 0, 0, scanCv.width, scanCv.height);
       var img = g.getImageData(0, 0, scanCv.width, scanCv.height);
       var code = window.jsQR(img.data, img.width, img.height, { inversionAttempts: 'dontInvert' });
       if (code && code.data) {
         var L = code.location, pts = [L.topLeftCorner, L.topRightCorner, L.bottomRightCorner, L.bottomLeftCorner];
-        return { raw: code.data, quad: pts.map(function (p) { return { x: p.x / k, y: p.y / k }; }), kind: '2d' };
+        return { raw: code.data, quad: pts.map(function (p) { return { x: p.x / k + rx, y: p.y / k + ry }; }), kind: '2d' };
       }
     }
-    if (window.ZXing) {
+    if (window.ZXing && scanN % 4 === 0) {
       var frame = 0.62 * stW / s, f = [1.15, 1.7, 0][zxRound++ % 3];
       var side = f ? Math.min(frame * f, vw, vh) : 0;
-      var rx = side ? (vw - side) / 2 : 0, ry = side ? (vh - side) / 2 : 0, rw = side || vw, rh = side || vh;
-      var d = Math.min(1, 900 / rw);
+      var wx = side ? (vw - side) / 2 : 0, wy = side ? (vh - side) / 2 : 0, ww = side || vw, wh = side || vh;
+      var d = Math.min(1, 900 / ww);
       if (!zxCv) zxCv = document.createElement('canvas');
-      zxCv.width = Math.round(rw * d); zxCv.height = Math.round(rh * d);
+      zxCv.width = Math.round(ww * d); zxCv.height = Math.round(wh * d);
       var zg = zxCv.getContext('2d', { willReadFrequently: true });
-      zg.drawImage(scanVideo, rx, ry, rw, rh, 0, 0, zxCv.width, zxCv.height);
+      zg.drawImage(scanVideo, wx, wy, ww, wh, 0, 0, zxCv.width, zxCv.height);
       var zi = zg.getImageData(0, 0, zxCv.width, zxCv.height), lum = new Uint8ClampedArray(zxCv.width * zxCv.height);
       for (var i = 0; i < lum.length; i++) lum[i] = (zi.data[i * 4] * 0.299 + zi.data[i * 4 + 1] * 0.587 + zi.data[i * 4 + 2] * 0.114) | 0;
-      var Z = window.ZXing, res = null;
-      try { res = zxReader().decode(new Z.BinaryBitmap(new Z.HybridBinarizer(new Z.RGBLuminanceSource(lum, zxCv.width, zxCv.height)))); } catch (e) { res = null; }
+      var res = zxDecodeLum(lum, zxCv.width, zxCv.height);
       if (res) {
         var rp = res.getResultPoints() || [], a = rp[0], b = rp[rp.length - 1], quad;
         if (a && b && Math.abs(b.getX() - a.getX()) >= Math.abs(b.getY() - a.getY())) quad = barcodeRect(lum, zxCv.width, zxCv.height, a.getX(), b.getX(), (a.getY() + b.getY()) / 2);
         else quad = [{ x: 0, y: 0 }, { x: zxCv.width, y: 0 }, { x: zxCv.width, y: zxCv.height }, { x: 0, y: zxCv.height }];
-        return { raw: res.getText(), quad: quad.map(function (p) { return { x: rx + p.x / d, y: ry + p.y / d }; }), kind: '1d' };
+        return { raw: res.getText(), quad: quad.map(function (p) { return { x: wx + p.x / d, y: wy + p.y / d }; }), kind: '1d' };
       }
     }
     return null;
@@ -14905,11 +15132,15 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
   }
   function scanTick() {
     if (scanEl.hidden || !scanStream || scanFound) return;
-    var again = function (det) { if (det) onDetection(det); if (!scanEl.hidden && scanStream && !scanFound) scanTimer = setTimeout(scanTick, 160); };
+    var again = function (det) {
+      if (det) onDetection(det); else autoZoomStep();
+      if (!scanEl.hidden && scanStream && !scanFound) scanTimer = setTimeout(scanTick, 160);
+    };
     if (scanVideo.readyState < 2 || !scanVideo.videoWidth) { scanTimer = setTimeout(scanTick, 160); return; }
     if (scanDetector) {
       scanDetector.detect(scanVideo).then(function (codes) {
         var list = (codes || []).map(fromDetector), pick = list.filter(function (d) { return parseSerial(d.raw).status === 'ok'; })[0] || list[0];
+        if (!pick && window.ZXing && (++scanN % 2 === 0)) { try { pick = detectFar(); } catch (e) { pick = null; } }   // small, distant barcodes the built-in reader misses
         again(pick || null);
       }).catch(function () { again(null); });
       return;
@@ -14918,6 +15149,33 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
     var det = null; try { det = detectFallback(); } catch (e) { det = null; }
     again(det);
   }
+  // camera zoom, where the phone allows it. While nothing is found it zooms in a step every few seconds, and starts
+  // again from the widest view. Moving the slider takes over.
+  function setupZoom(stream) {
+    scanTrack = stream.getVideoTracks ? stream.getVideoTracks()[0] : null; zoomCap = null; scanAuto = true;
+    $('#zoomBox').hidden = true;
+    if (!scanTrack) return;
+    try { var pf = scanTrack.applyConstraints && scanTrack.applyConstraints({ advanced: [{ focusMode: 'continuous' }] }); if (pf && pf.catch) pf.catch(function () {}); } catch (e) {}
+    var caps = null; try { caps = scanTrack.getCapabilities ? scanTrack.getCapabilities() : null; } catch (e) { caps = null; }
+    if (caps && caps.zoom && caps.zoom.max > caps.zoom.min) {
+      zoomCap = { min: caps.zoom.min, max: Math.min(caps.zoom.max, 6), step: caps.zoom.step || 0.1 };
+      var r = $('#zoomRange'); r.min = zoomCap.min; r.max = zoomCap.max; r.step = zoomCap.step; r.value = zoomCap.min;
+      $('#zoomVal').textContent = zoomCap.min.toFixed(1) + '\u00D7'; $('#zoomBox').hidden = false; zoomAt = performance.now();
+    }
+  }
+  function applyZoom(v, manual) {
+    if (!zoomCap || !scanTrack) return;
+    v = Math.max(zoomCap.min, Math.min(zoomCap.max, v));
+    $('#zoomRange').value = v; $('#zoomVal').textContent = v.toFixed(1) + '\u00D7'; zoomAt = performance.now();
+    if (manual) scanAuto = false;
+    try { var p = scanTrack.applyConstraints({ advanced: [{ zoom: v }] }); if (p && p.catch) p.catch(function () {}); } catch (e) {}
+  }
+  function autoZoomStep() {
+    if (!scanAuto || !zoomCap || performance.now() - zoomAt < 2800) return;
+    var cur = parseFloat($('#zoomRange').value), next = cur * 1.4;
+    applyZoom(next > Math.min(zoomCap.max, 4) ? zoomCap.min : next, false);
+  }
+  $('#zoomRange').addEventListener('input', function () { applyZoom(parseFloat(this.value), true); });
   function openScan() {
     $('#sampleLabel').hidden = true; $('#scanSample').setAttribute('aria-expanded', 'false');
     clearScanBox(); scanFound = false; scanEl.hidden = false; document.body.style.overflow = 'hidden'; scanLast = '';
@@ -14926,10 +15184,10 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
       scanMsg('Camera scanning needs a secure (https) page and a camera. Type the serial number instead.'); return;
     }
     scanMsg('Starting the camera\u2026');
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 720 } }, audio: false })
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: 'environment' }, width: { ideal: 1920 }, height: { ideal: 1080 } }, audio: false })
       .then(function (s) {
         if (scanEl.hidden) { s.getTracks().forEach(function (t) { t.stop(); }); return; }
-        scanStream = s; scanVideo.muted = true; scanVideo.playsInline = true; scanVideo.srcObject = s;
+        scanStream = s; setupZoom(s); scanVideo.muted = true; scanVideo.playsInline = true; scanVideo.srcObject = s;
         var pl = scanVideo.play(); if (pl && pl.catch) pl.catch(function () {});
         return initDetector().then(function () { scanMsg('Hold the barcode or QR code inside the frame.'); scanTick(); });
       })
@@ -14943,10 +15201,44 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
   $('#scanManual').addEventListener('click', function () { closeScan($('#serial-input')); });
 
   /* ----- sample label: the engraving on the underside of the necklace's cylinder, with a barcode that really reads ----- */
-  var zoomEl = $('#sampleZoom');
-  function closeZoom() { zoomEl.hidden = true; var b = $('#sampleZoomBtn'); if (b) b.focus(); }
-  $('#sampleZoomClose').addEventListener('click', closeZoom);
-  modalKeys(zoomEl, closeZoom);
+  /* ----- show a sample code on a big screen -----
+     The bigger the code looks to the camera, the farther away it can be read. This fills the screen with a crisp
+     barcode, a QR code or the engraved label, in black on white where that helps. */
+  var bigEl = $('#sampleZoom'), bigMode = 'bar', bigIdx = 1, bigFrom = null, BIG = [12, 412, 777];
+  function renderBig() {
+    var n = BIG[bigIdx], serial = makeSerial(n), h = '', body = $('#bigStage');
+    $$('[data-bigmode]', bigEl).forEach(function (b) {
+      var on = b.getAttribute('data-bigmode') === bigMode;
+      b.setAttribute('aria-pressed', String(on)); b.style.background = on ? '#6b645c' : '#fff'; b.style.color = on ? '#fff' : '#3b362f';
+    });
+    $('#bigNext').hidden = bigMode === 'label';
+    if (bigMode === 'bar') {
+      var bits = code128C(compactPayload(n)), total = bits.length + 20;
+      h = '<div style="width:min(96vw,1500px);aspect-ratio:' + total + '/' + Math.round(total * 0.26) + ';background:#fff;border:1px solid #d6d1cb">' + barSvg(bits, 10) + '</div>' +
+          '<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:clamp(18px,4.2vw,60px);letter-spacing:.04em;color:#1c1a18;text-align:center">' + esc(serial) + '</div>';
+    } else if (bigMode === 'qr') {
+      var q = ''; try { q = qrSvg('https://ctf-dpp.example/passport/' + serial, 8); } catch (e) { q = ''; }
+      h = '<div style="width:min(88vw,70vh);background:#fff;padding:2.5%;border:1px solid #d6d1cb">' + q + '</div>' +
+          '<div style="font-family:Georgia,\'Times New Roman\',serif;font-size:clamp(16px,3vw,40px);letter-spacing:.04em;color:#1c1a18;text-align:center">' + esc(serial) + '</div>';
+    } else {
+      h = '<img src="' + IMG.sample + '" alt="Engraved label on the underside of the necklace cylinder: a seal, a barcode and the serial number ' + esc(makeSerial(12)) + '" style="width:min(96vw,1600px);height:auto;display:block;border:1px solid #d6d1cb">';
+    }
+    body.innerHTML = h;
+  }
+  function openBig(mode, from) {
+    bigMode = mode || 'bar'; bigFrom = from || null; renderBig();
+    bigEl.hidden = false; document.body.style.overflow = 'hidden'; $('#sampleZoomClose').focus();
+  }
+  function closeBig() {
+    bigEl.hidden = true;
+    if (scanEl.hidden && unitEl.hidden) document.body.style.overflow = '';
+    (bigFrom || $('#bigOpen')).focus();
+  }
+  $('#sampleZoomClose').addEventListener('click', closeBig);
+  $$('[data-bigmode]', bigEl).forEach(function (b) { b.addEventListener('click', function () { bigMode = b.getAttribute('data-bigmode'); renderBig(); }); });
+  $('#bigNext').addEventListener('click', function () { bigIdx = (bigIdx + 1) % BIG.length; renderBig(); });
+  $('#bigOpen').addEventListener('click', function () { openBig('bar', this); });
+  modalKeys(bigEl, closeBig);
   $('#scanSample').addEventListener('click', function () {
     var box = $('#sampleLabel'), open = box.hidden;
     if (open) {
@@ -14954,9 +15246,9 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
       box.innerHTML = '<img src="' + IMG.sample + '" alt="Engraved label on the underside of the necklace cylinder: a seal, a barcode and the serial number ' + esc(s) + '" style="width:100%;display:block;border:1px solid #d6d1cb">' +
         '<p style="margin:10px 0 0;font-size:13px;letter-spacing:.04em">' + esc(s) + '</p>' +
         '<p style="margin:6px 0 0;font-size:12px;line-height:1.6;color:#5a544d">A sample of the engraving on the underside of the necklace. Show it on another screen and point this camera at it.</p>' +
-        '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button type="button" id="sampleZoomBtn" class="btn-outline" style="height:44px;padding:0 16px;font-size:11px">ENLARGE</button>' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button type="button" id="sampleZoomBtn" class="btn-outline" style="height:44px;padding:0 16px;font-size:11px">SHOW ON A BIG SCREEN</button>' +
         '<button type="button" id="sampleQrBtn" class="btn-outline" style="height:44px;padding:0 16px;font-size:11px">SHOW A QR CODE INSTEAD</button></div><div id="sampleQrBox" style="margin-top:14px" hidden></div>';
-      $('#sampleZoomBtn').addEventListener('click', function () { $('#sampleZoomImg').src = IMG.sample; zoomEl.hidden = false; $('#sampleZoomClose').focus(); });
+      $('#sampleZoomBtn').addEventListener('click', function () { openBig('label', this); });
       $('#sampleQrBtn').addEventListener('click', function () {
         var qb = $('#sampleQrBox'), qr = '';
         try { qr = qrSvg('https://ctf-dpp.example/passport/' + makeSerial(412), 5); } catch (e) { qr = ''; }
@@ -15231,19 +15523,15 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
       path.add(new THREE.CubicBezierCurve3(P, c2R, c1R, B));
       var tex = braidTexture(tc.cord.color, tc.cord.dark);
       tex.repeat.set(path.getLength() / 0.04, 1);
-      var front = new THREE.Mesh(new THREE.TubeGeometry(path, 120, r, 12, false),
-        new THREE.MeshStandardMaterial({ map: tex, bumpMap: tex, bumpScale: 1.5, roughness: 0.8, metalness: 0, depthTest: false, depthWrite: false }));
-      front.renderOrder = 3;                       // always on top: the visible, hanging part of the cord
+      var seg = 120, rad = 12, geo = new THREE.TubeGeometry(path, seg, r, rad, false), pos = geo.attributes.position;
+      for (var i = 0; i <= seg; i++) {             // the cord thins to a fine tip at each end, as if it runs on round behind the neck
+        var u = i / seg, e = Math.min(u, 1 - u) / 0.05, f = e >= 1 ? 1 : 0.1 + 0.9 * (e * e * (3 - 2 * e)), c = path.getPointAt(u);
+        for (var j = 0; j <= rad; j++) { var k = i * (rad + 1) + j; pos.setXYZ(k, c.x + (pos.getX(k) - c.x) * f, c.y + (pos.getY(k) - c.y) * f, c.z + (pos.getZ(k) - c.z) * f); }
+      }
+      pos.needsUpdate = true;
+      var front = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: tex, bumpMap: tex, bumpScale: 1.5, roughness: 0.8, metalness: 0, depthTest: false, depthWrite: false }));
+      front.renderOrder = 3;                       // always on top: the cord as it hangs, with no loop round the back
       g.add(front);
-      var pts = [V(side, lift, 0), V(side * 0.93, lift + 0.012, -0.05), V(side * 0.78, lift + 0.025, -0.13), V(side * 0.45, lift + 0.035, -0.22), V(0, lift + 0.04, -0.25),
-                 V(-side * 0.45, lift + 0.035, -0.22), V(-side * 0.78, lift + 0.025, -0.13), V(-side * 0.93, lift + 0.012, -0.05), V(-side, lift, 0)];
-      var back = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 56, r, 12, false),
-        new THREE.MeshStandardMaterial({ map: tex, bumpMap: tex, bumpScale: 1.5, roughness: 0.8, metalness: 0 }));
-      back.renderOrder = 2;                        // the loop round the back of the neck, hidden by the occluder
-      g.add(back);
-      var occ = new THREE.Mesh(new THREE.CylinderGeometry(side * 0.8, side * 0.8, 0.8, 32), new THREE.MeshBasicMaterial(ZERO));
-      occ.scale.z = 1.25; occ.position.set(0, 0.38, 0); occ.renderOrder = 0;   // the neck
-      g.add(occ);
       return g;
     }
 

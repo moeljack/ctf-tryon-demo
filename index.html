@@ -15788,7 +15788,8 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
      Necklaces hang from the tracked neck and shoulders. Bracelets sit on the tracked wrist. */
   var NECK = {
     anchorSide: 0.18,   // where the cord leaves the neck, sideways from centre (x shoulder width)
-    anchorLift: 0.24    // where the cord leaves the neck, above the shoulder line (x shoulder width)
+    anchorLift: 0.24,    // where the cord leaves the neck, above the shoulder line (x shoulder width)
+    shift: -0.03
   };
   function bez(a, k1, k2, b, u) {
     var v = 1 - u;
@@ -16117,8 +16118,7 @@ function findAlignmentPattern(matrix, alignmentPatternQuads, topRight, topLeft, 
       var ux = ex / ed, uy = ey / ed, dx = -uy, dy = ux, E = ed * 1.65;
       var m1 = P(9), m2 = P(10), mx = (m1.x + m2.x) / 2, my = (m1.y + m2.y) / 2;
       var chx = mx + dx * 0.37 * E, chy = my + dy * 0.37 * E;
-      return { sx: chx + dx * 0.75 * E, sy: chy + dy * 0.75 * E, ux: ux, uy: uy, W: 2.1 * E };
-    }
+      return { sx: (a.x + b.x) / 2 + vx * NECK.shift, sy: (a.y + b.y) / 2 + vy * NECK.shift, ux: vx / W, uy: vy / W, W: W };    }
     return null;
   }
   function bodyPresent(lmk) {
